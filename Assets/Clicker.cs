@@ -5,6 +5,7 @@ using UnityEngine;
 public class Clicker : MonoBehaviour
 {
     public int clicks;
+    public int clickPower;
     public float shrinkSpeed;
     public TMP_Text clicksText;
     public AudioSource audio;
@@ -24,7 +25,7 @@ public class Clicker : MonoBehaviour
 
     private void OnMouseDown()
     {
-        clicks++;
+        clicks += clickPower;
         transform.localScale = Vector3.one * 1.2f;
 
         clicksText.text = clicks.ToString();
