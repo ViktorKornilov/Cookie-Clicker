@@ -21,14 +21,15 @@ public class Clicker : MonoBehaviour
         {
             transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
         }
+        
+        clicksText.text = clicks.ToString();
     }
 
     private void OnMouseDown()
     {
         clicks += clickPower;
         transform.localScale = Vector3.one * 1.2f;
-
-        clicksText.text = clicks.ToString();
+        
         audio.Play();
         //audio.PlayOneShot(audio.clip);
     }
